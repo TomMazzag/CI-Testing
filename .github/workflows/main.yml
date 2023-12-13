@@ -32,6 +32,7 @@ jobs:
         run: |
           pipenv --where
           ls -la $(pipenv --venv)/bin
+          pip list
       
       # Now we run our tests
       - name: Test with pytest
