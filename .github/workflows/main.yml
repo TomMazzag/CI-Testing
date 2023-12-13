@@ -26,13 +26,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install pipenv
           pipenv install --dev
+          pipenv install -U pytest
 
       # Debugging output
       - name: Debug Pipenv environment
         run: |
           pipenv --where
           ls -la $(pipenv --venv)/bin
-          pip list
+          pipenv list
       
       # Now we run our tests
       - name: Test with pytest
